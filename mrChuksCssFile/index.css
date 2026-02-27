@@ -1,0 +1,491 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #f9f6f2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 28px;
+  color: #f26a2e;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a.active {
+  color: #f26a2e;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #f26a2e;
+}
+
+/* Login Button */
+.login-btn {
+  background-color: #f26a2e;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #d95c24;
+}
+.hamburger-menu {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+.hero {
+  height: 90vh;
+  background: url("../mrChuksWebsiteImages/indexHeroImage.png") center / cover
+    no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  color: white;
+}
+
+.hero::before,
+.footer-hero::before,
+.menu-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+  position: relative;
+  max-width: 600px;
+}
+
+.hero h1,
+.menu-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 61px;
+  letter-spacing: 0%;
+}
+
+.hero p,
+.menu-hero p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 25px;
+}
+
+.hero-btn {
+  background-color: #f26a2e;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #d95c24;
+}
+
+.popular-categories-content,
+.chef-special-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: center;
+}
+.popular-categories-content .popular-categories-header,
+.chef-special-header {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
+.popular-food-container,
+.chef-special-food-container,
+.popular-menu-container,
+.jollof-rice-entrees-container,
+.swallow-and-soup-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  max-width: 1100px;
+}
+.popular-food-container .popular-food-image,
+.chef-special-food-image,
+.popular-menu-image,
+.jollof-rice-entrees-image,
+.swallow-and-soup-image {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.popular-food-item,
+.chef-special-food-item,
+.popular-menu-item,
+.jollof-rice-entrees-item,
+.swallow-and-soup-item {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+.popular-food-item p {
+  margin: 30px;
+  font-size: 14px;
+  color: black;
+}
+.popular-food-container a,
+.chef-special-food-container a,
+.popular-menu-container a,
+.jollof-rice-entrees-container a,
+.swallow-and-soup-container a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.popular-food-item:hover,
+.chef-special-food-item:hover,
+.popular-menu-item:hover,
+.jollof-rice-entrees-item:hover,
+.swallow-and-soup-item:hover {
+  transform: translateY(-8px);
+}
+.chef-special-food-description,
+.popular-menu-description,
+.jollof-rice-entrees-description,
+.swallow-and-soup-description {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  margin: 10px;
+}
+.chef-special-food-description h3,
+.popular-menu-description h3 {
+  font-size: 18px;
+}
+.chef-special-food-description p,
+.popular-menu-description p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.pricing {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.pricing .price {
+  color: #f26a2e;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.pricing .add-to-cart,
+.add-to-cart-plus-icon {
+  background-color: #f26a2e;
+  padding: 8px 16px;
+  color: #f9f6f2;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.add-to-cart-plus-icon {
+  width: 30.75px;
+  height: 28.75px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-hero {
+  height: 50vh;
+  background: url("../mrChuksWebsiteImages/homePageHeroImage2.png") center /
+    cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 60px;
+  color: white;
+  margin-top: 100px;
+}
+.footer-hero .hero-content p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.footer {
+  background-color: #7b3f1d;
+  padding: 70px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+.footer .logo {
+  font-family: "Great Vibes", cursive;
+  font-size: 22px;
+  color: #f26a2e;
+}
+
+.footer-content-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+  max-width: 1100px;
+  gap: 60px;
+}
+.social-media-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-content-item h4 {
+  margin-bottom: 20px;
+}
+
+.footer-content-item p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.footer-content-item ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-content-item ul li {
+  margin-bottom: 10px;
+}
+.footer-content-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.footer-content-item a:hover {
+  color: #ff6b35;
+}
+.copyright {
+  padding-left: 35px;
+}
+.scroll-to-top {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+}
+.search-for-meal input {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: white;
+}
+.search-for-meal .fa-magnifying-glass {
+  color: rgba(81, 79, 79, 0.533);
+  margin-left: 5px;
+  font-weight: bolder;
+}
+.search-for-meal input::placeholder {
+  color: black;
+}
+.search-for-meal {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.8em 0.1em;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 16px #ddd8;
+  width: 70%;
+  margin: 0 auto;
+  position: absolute;
+  top: 580px;
+  left: 15%;
+}
+
+.menu-hero {
+  height: 90vh;
+  background: url("../mrChuksWebsiteImages/menuHeroImage.png") center / cover
+    no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  color: white;
+}
+.menu-list {
+  background-color: whitesmoke;
+  padding: 30px 20px;
+  margin-bottom: 70px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-categories {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px 0;
+  align-self: normal;
+  margin-left: 60px;
+  width: 91%;
+  /* margin: 0 auto; */
+}
+.menu-categories a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.menu-categories a,
+.menu-categories p {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 500;
+  padding-left: 15px;
+  line-height: 34px;
+  letter-spacing: 0%;
+}
+.menu-categories p {
+  font-weight: 700;
+}
+.menu-categories a.active-menu-categories,
+.menu-categories a:active {
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color: #f26a2e;
+  background-color: #ffe1c4;
+  padding: 10px;
+}
+.popular-menu-list,
+.jollof-rice-entrees,
+.swallow-and-soup {
+  margin-top: 30px;
+}
+.menu-list h2 {
+  margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+  .hamburger-menu {
+    display: none;
+  }
+  .popular-food-container,
+  .chef-special-food-container,
+  .popular-menu-container,
+  .jollof-rice-entrees-container,
+  .swallow-and-soup-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .navbar {
+    padding: 10px 30px;
+  }
+  .nav-links,
+  .login-btn-container,
+  .footer {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+  .search-for-meal {
+    top: 750px;
+  }
+  .popular-food-container,
+  .chef-special-food-container,
+  .popular-menu-container,
+  .jollof-rice-entrees-container,
+  .swallow-and-soup-container {
+    grid-template-columns: 1fr;
+  }
+  .menu-categories {
+    width: 100%;
+    margin: 0;
+  }
+  .popular-menu-item,
+  .jollof-rice-entrees-item,
+  .swallow-and-soup-item {
+    padding: 5px;
+  }
+
+  .popular-menu-item a,
+  .jollof-rice-entrees-item a,
+  .swallow-and-soup-item a {
+    display: flex;
+  }
+  .popular-menu-image,
+  .jollof-rice-entrees-image,
+  .swallow-and-soup-image {
+    width: 108.14px;
+    height: 99px;
+    border-radius: 3.5px;
+    object-fit: cover;
+  }
+
+  .popular-menu-description h3,
+  .jollof-rice-entrees-description h3,
+  .swallow-and-soup-description h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .popular-menu-description p,
+  .jollof-rice-entrees-description p,
+  .swallow-and-soup-description p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+}
